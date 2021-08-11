@@ -1,0 +1,106 @@
+.container_numberChart {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem;
+}
+
+.title {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.75rem;
+  margin: 1.5rem;
+}
+
+.numberChart {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  max-width: 425px;
+  flex-wrap: wrap;
+}
+
+.numberSquare {
+  border: 1px solid #000;
+  width: 81px;
+  height: 81px;
+  font-size: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.numberSquare:nth-child(n + 1) {
+  margin-left: -1px;
+}
+
+.numberSquare:nth-child(n + 6) {
+  margin-top: -2px;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+}
+
+.color-btn {
+  margin-right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+}
+
+.white {
+  background-color: white;
+}
+
+.lightsalmon {
+  background-color: lightsalmon;
+}
+
+.yellow {
+  background-color: yellow;
+}
+
+.lightskyblue {
+  background-color: lightskyblue;
+}
+
+.lightgreen {
+  background-color: lightgreen;
+}
+
+.lightcoral {
+  background-color: lightcoral;
+}
+
+.lightpink {
+  background-color: lightpink;
+}
+
+.clear {
+  border-radius: 10%;
+  border: 1px solid lightgrey;
+  padding: 0.75rem;
+  font-weight: 700;
+}
+
+.btn:hover {
+  opacity: 0.6;
+}
+
+.information {
+  margin-top: 2em;
+  font-size: 1.25em;
+}
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
