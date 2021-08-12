@@ -1,9 +1,13 @@
 import React, { useState } from "react";
-import { generateInitialState } from "./helperFunctions";
+import {
+  generateInitialState,
+  generateUpdatedMultiplesState,
+} from "./helperFunctions";
 import "./NumberChart.css";
 
 function NumberChart() {
   const [size, setSize] = useState(20);
+  const [multiple, setMultiple] = useState(null);
   const initialState = generateInitialState(size);
   const [squareColors, setSquareColors] = useState(initialState);
   const [color, setColor] = useState("white");
@@ -15,30 +19,19 @@ function NumberChart() {
   const handleClearBtnClick = () => {
     setSquareColors(initialState);
     setColor("white");
+    setMultiple(null);
   };
 
   const handleMultiples = (event) => {
-    const updatedState = {};
-    switch (event.target.value) {
-      case "2":
-        for (let i = 0; i <= size; i += 2) {
-          updatedState[i] = "yellow";
-        }
-        break;
-      case "5":
-        for (let i = 0; i <= size; i += 5) {
-          updatedState[i] = "yellow";
-        }
-        break;
-      case "10":
-        for (let i = 0; i <= size; i += 10) {
-          updatedState[i] = "yellow";
-        }
-        break;
-      default:
-        console.log("ugh");
-    }
-    setSquareColors(updatedState);
+    setMultiple(event.target.value);
+    setSquareColors(generateUpdatedMultiplesState(event.target.value, size));
+  };
+
+  const handleSize = (event) => {
+    setSquareColors(
+      generateUpdatedMultiplesState(multiple, event.target.value)
+    );
+    setSize(event.target.value);
   };
 
   return (
@@ -58,13 +51,13 @@ function NumberChart() {
         </div>
         <div className="size-buttons">
           <div>Chart Size</div>
-          <button className="button" onClick={() => setSize(20)}>
+          <button className="button" value={20} onClick={handleSize}>
             1-20
           </button>
-          <button className="button" onClick={() => setSize(50)}>
+          <button className="button" value={50} onClick={handleSize}>
             1-50
           </button>
-          <button className="button" onClick={() => setSize(100)}>
+          <button className="button" value={100} onClick={handleSize}>
             1-100
           </button>
         </div>
