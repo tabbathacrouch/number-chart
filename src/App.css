@@ -6,7 +6,7 @@
 }
 
 .information {
-  margin: 2rem;
+  margin: 5rem;
   font-size: 1.25em;
   position: inherit;
   bottom: 0;
@@ -19,4 +19,9 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+footer {
+  margin: 0em 5em 0em 5em;
+  font-style: italic;
 }
